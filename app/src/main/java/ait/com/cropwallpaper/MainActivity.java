@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void beginCrop(Uri source) {
         Uri destination = Uri.fromFile(new File(getCacheDir(), "cropped"));
-        Crop.of(source, destination).asSquare().start(this);
+        //Crop.of(source, destination).asSquare().start(this);
+        Crop.of(source, destination).withAspect(4,3).start(this);
     }
 
     private void handleCrop(int resultCode, Intent result) {
